@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styleRegistro.css">
+    <title>Registro - Qomaq Service</title>
+</head>
+<body>
+    <section class="content registro">
+        <!-- Formulario de registro -->
+        <form action="conexionRegistro.php" method="POST" onsubmit="mostrarMensajeExito()">
+            <div class="form-container">
+                <h2 class="title">Registro</h2>
+
+                <!-- Campos de registro -->
+                <label for="usuario">Usuario:</label>
+                <input type="text" name="usuario" required>
+
+                <label for="contrasena">Contraseña:</label>
+                <input type="password" name="contrasena" required>
+
+                <label for="nombre">Nombre:</label>
+                <input type="text"  name="nombre" required>
+
+                <label for="apellido_paterno">Apellido Paterno:</label>
+                <input type="text"  name="apellido_paterno" required>
+
+                <label for="apellido_materno">Apellido Materno:</label>
+                <input type="text"  name="apellido_materno" required>
+
+                <label for="ruc">RUC:</label>
+                <input type="text" name="ruc" required>
+
+                <label for="direccion">Dirección:</label>
+                <input type="text"  name="direccion" required>
+
+                <label for="email">Email:</label>
+                <input type="email"  name="email" required>
+
+                <label for="dni">DNI:</label>
+                <input type="text" name="dni" required>
+
+                <label for="telefono">Teléfono:</label>
+                <input type="tel"  name="telefono" required>
+
+                <label for="nombre_empresa">Nombre de la Empresa:</label>
+                <input type="text" name="nombre_empresa" required>
+                <input type="submit" value="Registro">
+            </div>
+
+            <!-- Botón de registro y logo -->
+            <div class="button-container">
+                
+                
+                <img src="img/LogoKomaq.png" alt="Logo de la empresa" class="company-logo">
+                <button type="submit" class="btn" onclick="siguiente()">Siguiente</button>
+            </div>
+        </form>
+        
+    </section>
+    <script>
+        function siguiente() {
+            // Redirige a la nueva vista (interfaz.html)
+            window.location.href = 'interfaz.html';
+        }
+        function mostrarMensajeExito() {
+             alert("Registro exitoso. ¡Bienvenido!");
+        }
+    </script>
+
+</body>
+</html>
+

@@ -1,0 +1,98 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: url('ruta/a/tu/imagen_fondo.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    height: 100vh;
+}
+
+.interfaz {
+    display: flex;
+}
+
+
+.sidebar {
+    width: 300px; /* Ancho de la barra lateral */
+    height: 130%; /* Hace que la barra lateral ocupe toda la altura del contenido principal */
+    background-color: #f5f5f5; /* Fondo gris claro */
+    padding: 20px; /* Espaciado interno */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Sombra en el lado derecho */
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar a {
+    font-size: 20px; /* Ajusta el tamaño del texto según sea necesario */
+    text-decoration: none;
+    color: rgba(10, 1, 1, 0.604);
+    display: block;
+    padding: 10px 0;
+    transition: background-color 0.3s;
+}
+
+.sidebar a:hover {
+    background-color: rgb(255, 30, 0);
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+    color: #160505; /* Color del texto en el área de contenido */
+}
+
+/* Estilo para el título dentro del área de contenido */
+.content .title {
+    color: #090909;
+}
+
+.logo {
+    max-width: 400px; /* Ajusta el tamaño según sea necesario */
+    position: absolute;
+    top: 10px; /* Distancia desde la parte superior */
+    right: 10px; /* Distancia desde la derecha */
+}
+
+.avisos {
+    background-color: #fff; /* Fondo blanco */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+
+/*Estilos para el calendario*/
+
+/* Estilos para el calendario */
+#calendario {
+    margin-top: 10px;
+    max-width: 1200px; /* Ajusta el ancho según sea necesario */
+    max-height: 350px; /* Establece la altura máxima */
+    background-color: #f5f5f5; /* Fondo gris claro */
+    border: 1px solid #ddd; /* Borde delgado */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Cambia el color del texto del día en el calendario */
+#calendario .fc-day-number {
+    color: #33333372; /* Color del texto del día */
+}
+
+/* Cambia el color de fondo de los días en el calendario */
+#calendario .fc-day {
+    background-color: #ebebeb; /* Fondo blanco */
+}
+
+/* Cambia el color del fondo del encabezado del calendario */
+#calendario .fc-widget-header {
+    background-color: #b73c33; /* Fondo azul */
+    color: #ffffff; /* Texto blanco */
+    border: 1px solid #b73c33; /* Borde del encabezado */
+    border-radius: 8px 8px 0 0;
+}

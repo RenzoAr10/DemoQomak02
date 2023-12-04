@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styleSolicitar.css">
+    <title>Solicitar Orden de Compra - Qomaq Service</title>
+</head>
+<body>
+    <section class="interfaz">
+        <!-- Barra lateral con subpáginas -->
+        <nav class="sidebar">
+            <ul>
+                <li><a href="interfaz.html">Inicio</a></li>
+                <li><a href="#datos-personales">Datos personales</a></li>
+                <li><a href="ordenescompra.html">Órdenes de compra</a></li>
+                <li class="active"><a href="solicitar.html">Solicitar Orden de Compra</a></li>
+                <li><a href="#facturas">Facturas</a></li>
+            </ul>
+        </nav>
+
+        <!-- Contenido principal -->
+        <main class="content">
+            <!-- Contenido de la subpágina "Solicitar Orden de Compra" -->
+            <h2 class="title">Solicitar Orden de Compra</h2>
+            <img src="img/LogoKomaq.png" alt="Logo de Qomaq Service" class="logo">
+
+            <form action="coxSolicitar.php" method="post">
+                <table id="ordenCompraTable">
+                    <thead>
+                        <tr>
+                            <th>Máquina</th>
+                            <th>Problema</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Aquí se agregarán dinámicamente las filas de la tabla -->
+                    </tbody>
+                </table>
+                <button type="button" onclick="agregarMaquina()">Agregar Máquina</button>
+                <button type="button" onclick="agregarProblema()">Agregar Problema</button>
+                <button type="submit" onclick="capturarDatos()">Generar Orden de Compra</button>
+            </form>
+
+            <script>
+                // Funciones JavaScript para agregar filas dinámicamente, similar a tu código original
+                function agregarMaquina() {
+                    // Lógica para agregar una nueva fila de máquina a la tabla
+                    var maquinaHTML = '<tr><td><select name="maquinas[]">';
+                        
+                        maquinaHTML += '<option value="1">Excavadora - Caterpillar</option>';
+                        maquinaHTML += '<option value="2">Cargadora - Komatsu</option>';
+                        maquinaHTML += '<option value="3">Retroexcavadora - JCB</option>';
+                        maquinaHTML += '<option value="4">Bulldozer - Volvo</option>';
+                        maquinaHTML += '<option value="5">Grúa - Liebherr</option>';
+                        maquinaHTML += '<option value="6">Tractor - John Deere</option>';
+                        maquinaHTML += '<option value="7">Camión Volquete - Mack</option>';
+                        maquinaHTML += '<option value="8">Compactadora - Bomag</option>';
+                        maquinaHTML += '<option value="9">Montacargas - Hyster</option>';
+                        maquinaHTML += '<option value="10">Perforadora - Atlas Copco</option>';
+                        maquinaHTML += '<option value="11">Manipulador Telescópico - Manitou</option>';
+                        maquinaHTML += '<option value="12">Tractor Agrícola - Case IH</option>';
+                        maquinaHTML += '<option value="13">Excavadora de Ruedas - Hitachi</option>';
+                        maquinaHTML += '<option value="14">Dumper - Terex</option>';
+                        maquinaHTML += '<option value="15">Barredora - Tennant</option>';
+                        maquinaHTML += '<option value="16">Plataforma Elevadora - Genie</option>';
+                        maquinaHTML += '<option value="17">Tren de Carretera - Caterpillar</option>';
+                        maquinaHTML += '<option value="18">Minicargadora - Bobcat</option>';
+                        maquinaHTML += '<option value="19">Dragalina - Bucyrus-Erie</option>';
+                        maquinaHTML += '<option value="20">Niveladora - New Holland</option>';
+                        maquinaHTML += '<option value="21">Excavadora - Hitachi</option>';
+                        maquinaHTML += '<option value="22">Retroexcavadora - Case</option>';
+                        maquinaHTML += '<option value="23">Cargadora Frontal - Volvo</option>';
+                        maquinaHTML += '<option value="24">Camión Mezclador - Kenworth</option>';
+                        maquinaHTML += '<option value="25">Tractor - Massey Ferguson</option>';
+                        maquinaHTML += '<option value="26">Compactadora de Asfalto - Dynapac</option>';
+                        maquinaHTML += '<option value="27">Motoniveladora - Caterpillar</option>';
+                        maquinaHTML += '<option value="28">Camión de Bomberos - Rosenbauer</option>';
+                        maquinaHTML += '<option value="29">Tractor Oruga - Komatsu</option>';
+                        maquinaHTML += '<option value="30">Barredora Industrial - Nilfisk</option>';
+                        maquinaHTML += '<option value="31">Manipulador Telescópico - JLG</option>';
+
+                        maquinaHTML += '</select></td><td></td></tr>';
+                    document.getElementById('ordenCompraTable').getElementsByTagName('tbody')[0].insertAdjacentHTML('beforeend', maquinaHTML);
+                }
+
+                function agregarProblema() {
+                    // Lógica para agregar una nueva fila de problema a la tabla
+                    var problemaHTML = '<tr><td></td><td><select name="problemas[]">';
+                    
+                    // ... (opciones de problemas)
+                    problemaHTML += '<option value="1">Falla del motor eléctrico</option>';
+                    problemaHTML += '<option value="2">Fuga de aceite hidráulico</option>';
+                    problemaHTML += '<option value="3">Problema en el sistema de frenos</option>';
+                    problemaHTML += '<option value="4">Problema en el sistema de transmisión</option>';
+                    problemaHTML += '<option value="5">Sobrecalentamiento del motor</option>';
+                    problemaHTML += '<option value="6">Batería descargada</option>';
+                    problemaHTML += '<option value="7">Problema en el sistema hidráulico</option>';
+                    problemaHTML += '<option value="8">Problema en el sistema de dirección</option>';
+                    problemaHTML += '<option value="9">Neumáticos desinflados</option>';
+                    problemaHTML += '<option value="10">Fallo en el sistema eléctrico</option>';
+                    problemaHTML += '<option value="11">Problema en el sistema de combustible</option>';
+                    problemaHTML += '<option value="12">Sistema de refrigeración defectuoso</option>';
+                    problemaHTML += '<option value="13">Filtración de combustible</option>';
+                    problemaHTML += '<option value="14">Falla en el sistema de iluminación</option>';
+                    problemaHTML += '<option value="15">Ruido anormal en el motor</option>';
+                    problemaHTML += '<option value="16">Vibraciones excesivas</option>';
+                    problemaHTML += '<option value="17">Problema en el sistema de suspensión</option>';
+                    problemaHTML += '<option value="18">Falla en el sistema de escape</option>';
+                    problemaHTML += '<option value="19">Desgaste prematuro de las piezas</option>';
+                    problemaHTML += '<option value="20">Problema en el sistema de refrigeración</option>';
+                    problemaHTML += '<option value="21">Problema en el sistema de carga</option>';
+                    problemaHTML += '<option value="22">Falta de potencia</option>';
+                    problemaHTML += '<option value="23">Problema en el sistema de lubricación</option>';
+                    problemaHTML += '<option value="24">Problema en el sistema de elevación</option>';
+                    problemaHTML += '<option value="25">Problema en el sistema de tracción</option>';
+                    problemaHTML += '<option value="26">Problema en el sistema de frenado hidráulico</option>';
+                    problemaHTML += '<option value="27">Problema en el sistema de dirección asistida</option>';
+                    problemaHTML += '<option value="28">Problema en el sistema de filtración</option>';
+                    problemaHTML += '<option value="29">Problema en el sistema de carga eléctrica</option>';
+                    problemaHTML += '<option value="30">Problema en el sistema de control de emisiones</option>';
+                    problemaHTML += '<option value="31">Falla en el sistema de encendido</option>';
+                    problemaHTML += '<option value="32">Ruido en la transmisión</option>';
+                    problemaHTML += '<option value="33">Problema en el sistema de combustión</option>';
+                    problemaHTML += '<option value="34">Vibraciones en la dirección</option>';
+                    problemaHTML += '<option value="35">Problema en el sistema de embrague</option>';
+                    problemaHTML += '<option value="36">Problema en el sistema de arranque</option>';
+                    problemaHTML += '<option value="37">Problema en el sistema de escape</option>';
+                    problemaHTML += '<option value="38">Problema en el sistema de frenado neumático</option>';
+                    problemaHTML += '<option value="39">Fuga de refrigerante</option>';
+                    problemaHTML += '<option value="40">Problema en el sistema de control de tracción</option>';
+                    problemaHTML += '<option value="41">Ruido en las ruedas</option>';
+                    problemaHTML += '<option value="42">Falla en el sistema de suspensión neumática</option>';
+                    problemaHTML += '<option value="43">Problema en el sistema de carga hidráulica</option>';
+                    problemaHTML += '<option value="44">Falla en el sistema de dirección hidráulica</option>';
+                    problemaHTML += '<option value="45">Problema en el sistema de dirección electrónica</option>';
+                    problemaHTML += '<option value="46">Falla en el sistema de frenado eléctrico</option>';
+                    problemaHTML += '<option value="47">Problema en el sistema de elevación hidráulica</option>';
+                    problemaHTML += '<option value="48">Problema en el sistema de tracción eléctrica</option>';
+                    problemaHTML += '<option value="49">Fallo en el sistema de control de estabilidad</option>';
+                    problemaHTML += '<option value="50">Problema en el sistema de frenado antibloqueo</option>';
+                    problemaHTML += '<option value="51">Problema en el sistema de dirección asistida eléctrica</option>';
+
+                    problemaHTML += '</select></td></tr>';
+                    document.getElementById('ordenCompraTable').getElementsByTagName('tbody')[0].insertAdjacentHTML('beforeend', problemaHTML);
+                }
+
+                function capturarDatos() {
+                    var maquinasSelect = document.querySelectorAll('select:first-child');
+                    var problemasSelect = document.querySelectorAll('select:last-child');
+                    var maquinas = [];
+                    var problemas = [];
+
+                    maquinasSelect.forEach(function (select) {
+                        maquinas.push(select.value);
+                    });
+
+                    problemasSelect.forEach(function (select) {
+                        problemas.push(select.value);
+                    });
+
+                    // Asignar valores a campos de formulario ocultos
+                    document.getElementsByName('maquinas')[0].value = JSON.stringify(maquinas);
+                    document.getElementsByName('problemas')[0].value = JSON.stringify(problemas);
+                }
+            </script>
+        </main>
+    </section>
+</body>
+</html>

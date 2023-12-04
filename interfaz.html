@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styleInterfaz.css">
+    <title>Interfaz - Qomaq Service</title>
+    <!-- Agrega estas líneas en el encabezado (head) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
+
+    
+
+    
+</head>
+<body>
+    <section class="interfaz">
+        <!-- Barra lateral con subpáginas -->
+        <nav class="sidebar">
+            <ul>
+                <li><a href="interfaz.html">Inicio</a></li>
+                <li><a href="#datos-personales">Datos personales</a></li>
+                <li><a href="ordenescompra.html">Órdenes de compra</a></li>
+                <li><a href="solicitar.html">Solicitar Orden de Compra</a></li>
+                <li><a href="#facturas">Facturas</a></li>
+            </ul>
+        </nav>
+
+        <!-- Contenido principal -->
+        <main class="content">
+            <!-- Contenido de la subpágina seleccionada -->
+            <h2 class="title">Inicio</h2>
+            <p>Bienvenido a la subpágina de Inicio.</p>
+            <img src="img/LogoKomaq.png" alt="Logo de Qomaq Service" class="logo">
+            <div class="avisos">
+                <h3>Avisos Importantes</h3>
+                <p>Texto del aviso 1.</p>
+                <p>Texto del aviso 2.</p>
+                <!-- Agrega más avisos según sea necesario -->
+            </div>  
+            <!-- calendario -->
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css">
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>   
+            <script>
+                $(document).ready(function() {
+                    // Configura el calendario
+                    $('#calendario').fullCalendar({
+                        // Configuraciones del calendario
+                    });
+                });
+            </script>
+            
+            <div id="calendario"></div>  
+        </main>
+    </section>
+</body>
+
+
+</html> 

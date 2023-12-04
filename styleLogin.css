@@ -1,0 +1,120 @@
+body {
+    font-family: Arial, sans-serif; /* Puedes cambiar la fuente según tus preferencias */
+    margin: 0;
+    padding: 0;
+}
+
+.content.login {
+    text-align: center; /* Centra el contenido del formulario */
+    margin-top: 20px; /* Añade un margen superior */
+}
+
+.user-image {
+    display: block; /* Hace que la imagen sea un bloque para poder centrarla fácilmente */
+    margin: 0 auto; /* Centra la imagen horizontalmente */
+}
+
+form {
+    margin-top: 20px; /* Añade un espacio entre la imagen y los campos del formulario */
+}
+
+label {
+    display: block; /* Hace que las etiquetas ocupen un bloque para apilarlas verticalmente */
+    margin-bottom: 1px; /* Añade espacio entre las etiquetas y los campos de entrada */
+}
+
+input {
+    width: 20%; /* Ocupa el ancho completo del contenedor */
+    padding: 8px; /* Ajusta el espaciado interno */
+    margin-bottom: 20px; /* Añade espacio entre los campos de entrada */
+}
+
+/* Ajusta la posición de la contraseña */
+#password {
+    margin-top: 10px;
+}
+
+.button-container {
+    display: flex; /* Usa un contenedor flex para alinear los botones horizontalmente */
+    justify-content: center; /* Distribuye los elementos horizontalmente */
+    gap: 10px; /* Espaciado entre los elementos */  
+}
+
+.btn {
+    width: 10%; /* Ajusta el ancho de los botones para que haya espacio entre ellos */
+}
+
+/* Otros estilos pueden añadirse según sea necesario */
+
+/* para el fondo*/
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: url(img/Komaq.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+
+.login {
+    background-color: white;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.user-image {
+    max-width: 100px;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 8px;
+}
+
+input {
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+/* Agrega un margen derecho al botón de iniciar sesión */
+.btn-login {
+    margin-right: 10px; /* Ajusta el margen derecho según tus preferencias */
+}
+
+.btn {
+    flex: 1;
+    background-color: #e41e0c;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none; /* Elimina el subrayado del enlace */
+}
+
+.btn:hover {
+    background-color: #e41e0c;
+}
+
+.btn:last-child {
+    margin-left: 10px;
+}
+
+
