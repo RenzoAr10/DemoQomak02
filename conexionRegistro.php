@@ -36,6 +36,8 @@ $id_cliente = pg_fetch_result($result_cliente, 0, 0);
 
 // Verificar el resultado de la consulta Cliente
 if ($result_cliente) {
+    session_start();
+    $_SESSION['id_cliente'] = $id_cliente;   
     echo "Registro exitoso en la tabla Cliente";
 } else {
     echo "Error en el registro en la tabla Cliente: " . pg_last_error();
@@ -52,12 +54,16 @@ $query_usuario = "INSERT INTO Usuario (nombre_usuario, contrasena_usuario, id_cl
 // Ejecutar la consulta Usuario
 $result_usuario = pg_query($conexion, $query_usuario);
 
+$_SESSION['id_usuario'] = $id_cliente;
+
 // Verificar el resultado de la consulta Usuario
 if ($result_usuario) {
     echo "Registro exitoso en la tabla Usuario";
 } else {
     echo "Error en el registro en la tabla Usuario: " . pg_last_error();
 }
+
+
 
 
 // Cerrar la conexión

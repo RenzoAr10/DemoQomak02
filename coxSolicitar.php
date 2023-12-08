@@ -1,5 +1,19 @@
 <?php
 
+// Otro archivo PHP donde necesitas el ID del cliente
+session_start();
+
+if (isset($_SESSION['id_cliente'])) {
+    $id_cliente = $_SESSION['id_cliente'];
+
+    // Puedes utilizar $id_cliente en este archivo
+
+    // Ahora, si tienes el ID del usuario almacenado en algún lugar (por ejemplo, en $_SESSION['id_usuario']),
+    // puedes usarlo en tus consultas.
+    $id_usuario = $_SESSION['id_usuario']; // Ajusta esto según donde tengas el ID del usuario.
+} else {
+    // Manejar la situación donde $_SESSION['id_cliente'] no está definido
+}
 
 
 // Configuración de la conexión a PostgreSQL
@@ -17,22 +31,18 @@ if (!$conexion) {
 }
 
 
-
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // Obtener datos del formulario
     $maquinas = $_POST['maquinas'];
 
     // Obtener el ID del usuario almacenado en la sesión
-
-
-
     $problemas = $_POST['problemas'];
 
     // Iniciar una transacción
     pg_query($conexion, "BEGIN");
 
     // Realizar la inserción en la tabla OrdenCompra
-    $queryOrdenCompra = "INSERT INTO OrdenCompra (estado_oc, fecha_oc, id_usuario) VALUES ('Pendiente', NOW(),10) RETURNING id_orden_compra";
+    $queryOrdenCompra = "INSERT INTO OrdenCompra (estado_oc, fecha_oc, id_usuario) VALUES ('Pendiente', NOW(),$id_usuario) RETURNING id_orden_compra";
     $resultOrdenCompra = pg_query($conexion, $queryOrdenCompra);
 
     if (!$resultOrdenCompra) {
